@@ -1,0 +1,12 @@
+node_modules/
+webapp/node_modules/
+venv/
+.envdist/
+webapp/dist/
+build/
+pycache/
+*.py[cod]
+training_pipeline/PlantVillage/
+training_pipeline/dataset/
+.DS_Store
+Thumbs.db

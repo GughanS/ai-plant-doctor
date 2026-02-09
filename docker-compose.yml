@@ -1,0 +1,9 @@
+services:
+  plant-doctor-web:
+    build:
+      context: ./webapp
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"  # Maps port 80 (container) to port 80 (localhost)
+    restart: always
+    container_name: ai_plant_doctor_production
