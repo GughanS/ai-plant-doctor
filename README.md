@@ -44,7 +44,7 @@ Docker (Optional, for containerized run)
 
 ### 1. Clone the repository
 ```
-git clone [https://github.com/YOUR_USERNAME/ai-plant-doctor.git](https://github.com/YOUR_USERNAME/ai-plant-doctor.git)
+git clone [https://github.com/GughanS/ai-plant-doctor.git](https://github.com/GughanS/ai-plant-doctor.git)
 
 cd ai-plant-doctor/webapp
 ```
