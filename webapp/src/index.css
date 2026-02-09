@@ -3,7 +3,7 @@
   line-height: 1.5;
   font-weight: 400;
   color-scheme: dark;
-  background-color: #0f172a; /* Matches your App background */
+  background-color: #022c22; /* Deep Forest Green base */
 }
 
 html, body {
@@ -16,7 +16,6 @@ html, body {
 body {
   min-width: 320px;
   min-height: 100vh;
-  /* Removed "display: flex" and "place-items: center" which caused the left alignment issue */
 }
 
 #root {

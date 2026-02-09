@@ -1,89 +1,97 @@
-# AI Plant Doctor
+# **AI Plant Doctor**
 
-AI Plant Doctor is a progressive web application that uses Deep Learning to detect diseases in plants instantly. By simply uploading a photo of a leaf, the AI analyzes the image entirely in the browser (Client-Side) to diagnose issues like Blight, Rot, or Rust.
+AI Plant Doctor is a professional Progressive Web Application (PWA) that empowers farmers and gardeners to detect plant diseases instantly. By running Deep Learning models directly in the browser using TensorFlow.js, it offers privacy, zero latency, and offline capabilities.
+![alt text](image.png)![alt text](image2.png)
 
-![alt text](image.png)![alt text](image2.png)![alt text](image3.png)
+## **Features**
 
-## Features
+**Intelligent Diagnosis:** Instantly detects 38 different plant diseases across 14 crop types using a custom MobileNetV3 model.
 
-Real-time Diagnosis: Detects 38 different plant diseases.
+**Treatment & Prevention:** Acts as a true "Doctor" by providing actionable advice, treatment steps, and prevention tips for every detected disease.
 
-Privacy First: All analysis happens in the browser using TensorFlow.js. No images are sent to a server.
+**Privacy-First:** All analysis happens client-side (in the browser). No user photos are ever uploaded to a cloud server.
 
-MobileNetV3 Architecture: Lightweight and fast, optimized for web and mobile devices.
+**High Performance:** Optimized for mobile devices with a lightweight model (~20MB) and WebGL acceleration.
 
-Offline Capable: Once loaded, the app works without an internet connection.
+**Adaptive UI:** Features a modern "Forest Green" glassmorphism interface that adapts to any screen size.
 
-## Tech Stack
+## **Tech Stack**
 
-**Frontend:** React, Vite
+**Frontend** 
 
-**AI/ML:** TensorFlow.js, Keras (MobileNetV3)
+**React (v18):** Component-based UI architecture.
 
-**Styling:** CSS Modules, Lucide React Icons
+**Vite:** Lightning-fast build tool and dev server.
 
-**Deployment:** Docker, Nginx (or Vercel)
+**TensorFlow.js:** Client-side machine learning engine.
 
-## Architecture
+**Lucide React:** Modern iconography.
 
-**Training:** The model was trained on the PlantVillage dataset (50,000+ images) using Python & Keras on a Tesla T4 GPU.
+ **AI & Training**
 
-**Conversion:** The Keras model (.h5) was converted to a TensorFlow.js Graph Model (model.json).
+**Architecture:** MobileNetV3-Small (Transfer Learning).
 
-**Inference:** The React app loads this graph model and runs prediction on the client's GPU via WebGL.
+**Dataset:** PlantVillage (54k+ images).
 
-## How to Run Locally
-```
+**Training:** Python/Keras on NVIDIA Tesla T4 GPU.
+
+**Format:** TFJS Graph Model (model.json + Sharded Binaries).
+
+## **Deployment**
+
+**Docker:** Multi-stage build (Node.js builder → Nginx runner).
+
+**Nginx:** High-performance static asset serving with gzip compression.
+
+### **How to Run Locally**
+---------------------------
 Prerequisites
 
 Node.js (v18+)
 
-Docker (Optional, for containerized run)
-```
-### Option 1: Quick Start (Node.js)
+Docker (Optional, for production simulation)
 
-### 1. Clone the repository
+**Option 1: Development Mode**
+
+**Clone the repository:**
 ```
 git clone [https://github.com/GughanS/ai-plant-doctor.git](https://github.com/GughanS/ai-plant-doctor.git)
-
 cd ai-plant-doctor/webapp
 ```
 
-### 2. Install dependencies
+**Install dependencies:**
 ```
 npm install
-```
 
-### 3. Start the dev server
-```
+
+Start the app:
+
 npm run dev
 
 
-Open http://localhost:5173 to view it in the browser.
+Open http://localhost:5173 in your browser.
 ```
+**Option 2: Production Mode (Docker)**
 
-### Option 2: Production Container (Docker)
+This runs the exact Nginx container used in deployment.
 
+**From the root directory:**
 ```
-# From the root directory
 docker compose up --build
-
-
-Open http://localhost to view the production build.
 ```
 
-## Model Performance
+**Access the app:**
+```
+Open http://localhost (Port 80).
+```
 
-The model achieves ~96% accuracy on the validation set across 38 classes, including:
+## **Supported Crops**
 
-Apple (Scab, Black Rot, Rust)
+The model is trained to recognize diseases in:
 
-Corn (Leaf Spot, Blight)
+Apple, Cherry, Corn, Grape, Peach, Pepper (Bell), Potato, Strawberry, Tomato, and more which are included in PlantVillage dataset.
 
-Potato (Early/Late Blight)
-
-Tomato (Bacterial Spot, Leaf Mold, Mosaic Virus)
-
-## License
+## **License**
 
 This project is open-source and available under the MIT License.
+
